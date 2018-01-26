@@ -1,0 +1,28 @@
+{
+  "name": "ngx-intro-js-wrapper",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanmavley/ngx-intro.js-wrapper"
+  },
+  "author": {
+    "name": "Rexford Nkansah",
+    "email": "seanmavley@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanmavley/ngx-intro.js-wrapper/issues"
+  },
+  "main": "ngx-intro-js-wrapper.umd.js",
+  "module": "ngx-intro-js-wrapper.js",
+  "jsnext:main": "ngx-intro-js-wrapper.js",
+  "typings": "ngx-intro-js-wrapper.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
