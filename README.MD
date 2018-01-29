@@ -30,8 +30,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
-import { SampleModule } from 'ngx-intro-js-wrapper';
+// Import the service
+import { NgxTourService } from 'ngx-intro-js-wrapper';
 
 @NgModule({
   declarations: [
@@ -39,11 +39,8 @@ import { SampleModule } from 'ngx-intro-js-wrapper';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
   ],
-  providers: [],
+  providers: [NgxTourService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
