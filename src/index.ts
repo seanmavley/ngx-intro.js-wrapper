@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 // import { SampleComponent } from './sample.component';
 // import { SampleDirective } from './sample.directive';
 // import { SamplePipe } from './sample.pipe';
-import { TourService } from './tour.service';
+import { NgxTourService } from './tour.service';
 
 // export * from './sample.component';
 // export * from './sample.directive';
@@ -29,7 +29,7 @@ export class NgxIntroJsService {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgxIntroJsService,
-      providers: [TourService]
+      providers: [NgxTourService]
     };
   }
 }

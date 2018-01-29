@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 declare let require: any;
-
-const IntroJs = require('../../../node_modules/intro.js/intro.js');
+import { IntroJs, introJs } from 'intro.js';
 
 export enum introStatus {
   open,
@@ -9,11 +8,10 @@ export enum introStatus {
 }
 
 export interface IntroInterface {
-  intro: IntroJs.IntroJs;
   addListener(name: introStatus, callback: Function): void;
   removeListener(name: introStatus): void;
 
-  setOptions: IntroJs.Options;
+  setOptions(options: [string]): IntroJs.Options;
   start(stepId?: number): IntroJs.IntroJs;
   exit(): IntroJs.IntroJs;
   clear(callback: Function): IntroJs.IntroJs;
@@ -40,7 +38,7 @@ export interface IntroInterface {
 }
 
 @Injectable()
-export class TourService implements IntroInterface {
+export class NgxTourService implements IntroInterface {
 
   private notifyList = [];
   public intro: IntroJs.IntroJs;
@@ -79,8 +77,9 @@ export class TourService implements IntroInterface {
   }
 
   clear(cb: Function) {
-    if (typeof (this.intro) !== 'undefined')
+    if (typeof (this.intro) !== 'undefined') {
       this.intro.exit();
+    }
 
     this.intro = introJs();
 
@@ -183,11 +182,11 @@ export class TourService implements IntroInterface {
     });
   }
 
-  set_tour() {
+  setTour() {
     localStorage.setItem('is_toured', 'true');
   }
 
-  is_toured() {
+  isToured() {
     if (localStorage.getItem('is_toured')) {
       return true;
     } else {
@@ -195,7 +194,7 @@ export class TourService implements IntroInterface {
     }
   }
 
-  clear_tour() {
+  clearTour() {
     localStorage.removeItem('is_toured');
   }
 }

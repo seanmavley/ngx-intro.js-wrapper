@@ -4,6 +4,8 @@ This is a wrapper of intro.js for Angular.
 
 Based on: https://github.com/millerscout/ng2-introjs
 
+Only currently having a TourService.
+
 ## Installation
 
 To install this library, run:
